@@ -1,0 +1,33 @@
+#Android ignore
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+/nbandroid/
+
+#Android Studio
+.gradle/
+.idea/
+.settings/
+build/
+gradle/
+
+grandlew
+grandlew.bat
+MA.iml
+/build.gradle
+/gradlew
+/gradlew.bat

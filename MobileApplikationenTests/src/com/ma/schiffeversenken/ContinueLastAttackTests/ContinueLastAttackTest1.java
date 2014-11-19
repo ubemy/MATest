@@ -1,4 +1,4 @@
-package com.ma.schiffeversenken.test;
+package com.ma.schiffeversenken.ContinueLastAttackTests;
 
 import junit.framework.TestCase;
 import com.ma.schiffeversenken.controller.KI;
@@ -10,7 +10,7 @@ import com.ma.schiffeversenken.model.Field;
 import com.ma.schiffeversenken.model.Ship;
 import com.ma.schiffeversenken.model.Submarine;
 
-public class KITest extends TestCase {
+public class ContinueLastAttackTest1 extends TestCase {
 	KI ki;
 	
 	@Override
@@ -30,12 +30,16 @@ public class KITest extends TestCase {
 		Field firstField = new Field(0);
 		Field secondField = new Field(1);
 		
+		firstField.getElementByID(25).setAttacked(true);
+		firstField.getElementByID(26).setAttacked(true);
+		
 		ShipPlacement sp = new ShipPlacement();
 		sp.placeShips(firstField, myships);
 		
 		ki = new KI(secondField, firstField);
 		
 		ki.updateHistory(25, true, false);
+		ki.updateHistory(26, true, false);
 	}
 	
 	protected void setUpBeforeClass() throws Exception {
@@ -43,6 +47,6 @@ public class KITest extends TestCase {
 	}
 
 	public void test() throws Exception {
-		assertEquals(2, ki.attack());
+		assertEquals(27, ki.attack());
 	}
 }
