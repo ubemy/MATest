@@ -8,7 +8,7 @@
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
-        android:targetPackage="com.ma.schiffeversenken" />
+        android:targetPackage="com.ma.schiffeversenken.android" />
 
     <application
         android:icon="@drawable/ic_launcher"
