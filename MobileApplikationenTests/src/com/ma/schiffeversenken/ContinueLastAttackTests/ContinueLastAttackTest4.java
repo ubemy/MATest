@@ -10,7 +10,7 @@ import com.ma.schiffeversenken.model.Field;
 import com.ma.schiffeversenken.model.Ship;
 import com.ma.schiffeversenken.model.Submarine;
 
-public class ContinueLastAttackTest2 extends TestCase {
+public class ContinueLastAttackTest4 extends TestCase {
 	KI ki;
 	
 	@Override
@@ -30,18 +30,18 @@ public class ContinueLastAttackTest2 extends TestCase {
 		Field firstField = new Field(0);
 		Field secondField = new Field(1);
 		
-		firstField.getElementByID(31).setAttacked(true);
-		firstField.getElementByID(41).setAttacked(true);
-		firstField.getElementByID(51).setAttacked(true);
+		firstField.getElementByID(75).setAttacked(true);
+		firstField.getElementByID(65).setAttacked(true);
+		firstField.getElementByID(55).setAttacked(true);
 		
 		ShipPlacement sp = new ShipPlacement();
 		sp.placeShips(firstField, myships);
 		
 		ki = new KI(secondField, firstField);
 		
-		ki.updateHistory(31, true, false);
-		ki.updateHistory(41, true, false);
-		ki.updateHistory(51, true, false);
+		ki.updateHistory(75, true, false);
+		ki.updateHistory(65, true, false);
+		ki.updateHistory(55, false, false);
 	}
 	
 	protected void setUpBeforeClass() throws Exception {
@@ -49,6 +49,6 @@ public class ContinueLastAttackTest2 extends TestCase {
 	}
 
 	public void test() throws Exception {
-		assertEquals(61, ki.attack());
+		assertEquals(85, ki.attack());
 	}
 }

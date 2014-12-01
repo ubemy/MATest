@@ -31,9 +31,3 @@ MA.iml
 /build.gradle
 /gradlew
 /gradlew.bat
-/project.properties
-
-.classes.dex
-.classpath
-bin/
-project.properties

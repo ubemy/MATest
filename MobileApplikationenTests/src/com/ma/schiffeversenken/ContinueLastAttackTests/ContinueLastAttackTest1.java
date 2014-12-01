@@ -1,14 +1,14 @@
 package com.ma.schiffeversenken.ContinueLastAttackTests;
 
 import junit.framework.TestCase;
-import com.ma.schiffeversenken.android.controller.KI;
-import com.ma.schiffeversenken.android.controller.ShipPlacement;
-import com.ma.schiffeversenken.android.model.Battleship;
-import com.ma.schiffeversenken.android.model.Cruiser;
-import com.ma.schiffeversenken.android.model.Destroyer;
-import com.ma.schiffeversenken.android.model.Field;
-import com.ma.schiffeversenken.android.model.Ship;
-import com.ma.schiffeversenken.android.model.Submarine;
+import com.ma.schiffeversenken.controller.KI;
+import com.ma.schiffeversenken.controller.ShipPlacement;
+import com.ma.schiffeversenken.model.Battleship;
+import com.ma.schiffeversenken.model.Cruiser;
+import com.ma.schiffeversenken.model.Destroyer;
+import com.ma.schiffeversenken.model.Field;
+import com.ma.schiffeversenken.model.Ship;
+import com.ma.schiffeversenken.model.Submarine;
 
 public class ContinueLastAttackTest1 extends TestCase {
 	KI ki;

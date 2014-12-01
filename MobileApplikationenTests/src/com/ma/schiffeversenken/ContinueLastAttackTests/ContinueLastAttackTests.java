@@ -7,7 +7,7 @@ public class ContinueLastAttackTests {
 /*
  * Wenn die KI in einem vorherigen Angriff ein gegnerisches Schiff getroffen
  * hat, soll die KI diesen Angriff fortführen und NICHT an einem anderen
- * belibigen Punkt angreifen.
+ * beliebigen Punkt angreifen.
  * Dieses Verhalten wird in diesem Test-Package mit verschiedenen 
  * Szenarien getestet.
  */
@@ -16,6 +16,10 @@ public class ContinueLastAttackTests {
 		//$JUnit-BEGIN$
 		suite.addTestSuite(ContinueLastAttackTest1.class);
 		suite.addTestSuite(ContinueLastAttackTest2.class);
+		suite.addTestSuite(ContinueLastAttackTest3.class);
+		suite.addTestSuite(ContinueLastAttackTest4.class);
+		suite.addTestSuite(ContinueLastAttackTest5.class);
+		suite.addTestSuite(ContinueLastAttackTest6.class);
 		//$JUnit-END$
 		return suite;
 	}
