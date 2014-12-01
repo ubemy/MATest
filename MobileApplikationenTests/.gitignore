@@ -32,3 +32,8 @@ MA.iml
 /gradlew
 /gradlew.bat
 /project.properties
+
+.classes.dex
+.classpath
+bin/
+project.properties
