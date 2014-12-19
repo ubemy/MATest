@@ -3,28 +3,32 @@ package com.ma.schiffeversenken.ContinueLastAttackTests;
 import junit.framework.TestCase;
 import com.ma.schiffeversenken.android.controller.KI;
 import com.ma.schiffeversenken.android.controller.ShipPlacement;
-import com.ma.schiffeversenken.android.model.Battleship;
-import com.ma.schiffeversenken.android.model.Cruiser;
-import com.ma.schiffeversenken.android.model.Destroyer;
 import com.ma.schiffeversenken.android.model.Field;
 import com.ma.schiffeversenken.android.model.Ship;
-import com.ma.schiffeversenken.android.model.Submarine;
 
 public class ContinueLastAttackTest4 extends TestCase {
+	/**Groesse des Kreuzer*/
+	public static final int CRUISER_SIZE = 1;
+	/**Groesse des Uboot*/
+	public static final int SUBMARINE_SIZE = 2;
+	/**Groesse des Zerstoerer*/
+	public static final int DESTROYER_SIZE = 3;
+	/**Groesse des Schlachtschiff*/
+	public static final int BATTLESHIP_SIZE = 4;
 	KI ki;
 	
 	@Override
 	protected void setUp() throws Exception {
-		Ship[] myships = new Ship[]{new Submarine("Uboot"),
-				new Submarine("Uboot"),
-				new Submarine("Uboot"),
-				new Cruiser("Kreuzer"),
-				new Cruiser("Kreuzer"),
-				new Cruiser("Kreuzer"),
-				new Cruiser("Kreuzer"),
-				new Destroyer("Zerstoerer"),
-				new Destroyer("Zerstoerer"),
-				new Battleship("Schlachtschiff")
+		Ship[] myships = new Ship[]{new Ship("Uboot", SUBMARINE_SIZE),
+				new Ship("Uboot", SUBMARINE_SIZE),
+				new Ship("Uboot", SUBMARINE_SIZE),
+				new Ship("Kreuzer", CRUISER_SIZE),
+				new Ship("Kreuzer", CRUISER_SIZE),
+				new Ship("Kreuzer", CRUISER_SIZE),
+				new Ship("Kreuzer", CRUISER_SIZE),
+				new Ship("Zerstoerer", DESTROYER_SIZE),
+				new Ship("Zerstoerer", DESTROYER_SIZE),
+				new Ship("Schlachtschiff", BATTLESHIP_SIZE)
 				};
 		
 		Field firstField = new Field(0);
