@@ -40,9 +40,9 @@ public class ContinueLastAttackTest6 extends TestCase {
 		firstField.getElementByID(36).setAttacked(true);
 		
 		ShipPlacement sp = new ShipPlacement();
-		sp.placeShips(firstField, myships);
+		sp.placeShips(firstField, myships, true);
 		
-		ki = new KI(secondField, firstField);
+		ki = new KI(secondField, firstField, true);
 		
 		ki.updateHistory(33, false, false);
 		ki.updateHistory(36, true, false);

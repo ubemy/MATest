@@ -1,6 +1,11 @@
 package com.ma.schiffeversenken.ContinueLastAttackTests;
 
 import junit.framework.TestCase;
+
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.ma.schiffeversenken.android.controller.KI;
 import com.ma.schiffeversenken.android.controller.ShipPlacement;
 import com.ma.schiffeversenken.android.model.Field;
@@ -38,9 +43,9 @@ public class ContinueLastAttackTest1 extends TestCase {
 		firstField.getElementByID(26).setAttacked(true);
 		
 		ShipPlacement sp = new ShipPlacement();
-		sp.placeShips(firstField, myships);
+		sp.placeShips(firstField, myships, true);
 		
-		ki = new KI(secondField, firstField);
+		ki = new KI(secondField, firstField, true);
 		
 		ki.updateHistory(25, true, false);
 		ki.updateHistory(26, true, false);
