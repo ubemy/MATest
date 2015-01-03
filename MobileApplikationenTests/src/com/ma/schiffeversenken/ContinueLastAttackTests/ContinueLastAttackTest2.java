@@ -41,7 +41,7 @@ public class ContinueLastAttackTest2 extends TestCase {
 		ShipPlacement sp = new ShipPlacement();
 		sp.placeShips(firstField, myships, true);
 		
-		ki = new KI(secondField, firstField, true);
+		ki = new KI(secondField, firstField, true, false, 2);
 		
 		ki.updateHistory(31, true, false);
 		ki.updateHistory(41, true, false);
