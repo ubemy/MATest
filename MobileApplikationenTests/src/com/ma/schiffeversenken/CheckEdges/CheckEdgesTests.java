@@ -12,6 +12,7 @@ public class CheckEdgesTests {
 		suite.addTestSuite(CheckEdgesTest2.class);
 		suite.addTestSuite(CheckEdgesTest3.class);
 		suite.addTestSuite(CheckEdgesTest4.class);
+		suite.addTestSuite(CheckEdgesTest5.class);
 		//$JUnit-END$
 		return suite;
 	}
