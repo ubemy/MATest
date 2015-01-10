@@ -2,6 +2,7 @@ package com.ma.schiffeversenken.CheckGamePlay;
 
 import com.ma.schiffeversenken.android.controller.Game;
 import com.ma.schiffeversenken.android.controller.KI;
+import com.ma.schiffeversenken.android.controller.ShipPlacement;
 import com.ma.schiffeversenken.android.model.Field;
 import com.ma.schiffeversenken.android.model.FieldUnit;
 import com.ma.schiffeversenken.android.model.Ship;
@@ -15,19 +16,21 @@ public class CheckGamePlayTest1 extends TestCase {
 	}
 
 	protected void setUp() throws Exception {
+		ShipPlacement.jUnitTest = true;
+		
 		Field firstField = new Field(0);
 		Field secondField = new Field(1);
 		
 		FieldUnit[] fieldUnits = new FieldUnit[1];
 		fieldUnits[0] = firstField.getElementByID(2);
-		Ship ship = new Ship("Uboot", Ship.CRUISER_SIZE, fieldUnits);
+		Ship ship = new Ship(Ship.CRUISER_SIZE, fieldUnits);
 		fieldUnits[0].setPlacedShip(ship);
 		fieldUnits[0].setOccupied(true);
 		
 		FieldUnit[] fieldUnits2 = new FieldUnit[2];
 		fieldUnits2[0] = firstField.getElementByID(25);
 		fieldUnits2[1] = firstField.getElementByID(26);
-		Ship ship2 = new Ship("Uboot", Ship.SUBMARINE_SIZE, fieldUnits2);
+		Ship ship2 = new Ship(Ship.SUBMARINE_SIZE, fieldUnits2);
 		fieldUnits2[0].setPlacedShip(ship2);
 		fieldUnits2[0].setOccupied(true);
 		fieldUnits2[1].setPlacedShip(ship2);
@@ -37,7 +40,7 @@ public class CheckGamePlayTest1 extends TestCase {
 		fieldUnits3[0] = firstField.getElementByID(12);
 		fieldUnits3[1] = firstField.getElementByID(22);
 		fieldUnits3[2] = firstField.getElementByID(32);
-		Ship ship3 = new Ship("Uboot", Ship.DESTROYER_SIZE, fieldUnits3);
+		Ship ship3 = new Ship(Ship.DESTROYER_SIZE, fieldUnits3);
 		fieldUnits3[0].setPlacedShip(ship3);
 		fieldUnits3[0].setOccupied(true);
 		fieldUnits3[1].setPlacedShip(ship3);
@@ -50,7 +53,7 @@ public class CheckGamePlayTest1 extends TestCase {
 		fieldUnits4[1] = firstField.getElementByID(83);
 		fieldUnits4[2] = firstField.getElementByID(84);
 		fieldUnits4[3] = firstField.getElementByID(85);
-		Ship ship4 = new Ship("Uboot", Ship.BATTLESHIP_SIZE, fieldUnits4);
+		Ship ship4 = new Ship(Ship.BATTLESHIP_SIZE, fieldUnits4);
 		fieldUnits4[0].setPlacedShip(ship4);
 		fieldUnits4[0].setOccupied(true);
 		fieldUnits4[1].setPlacedShip(ship4);
@@ -60,7 +63,6 @@ public class CheckGamePlayTest1 extends TestCase {
 		fieldUnits4[3].setPlacedShip(ship4);
 		fieldUnits4[3].setOccupied(true);
 		
-		KI.jUnitTest = true;
 		
 		game = new Game(0, firstField, secondField, false, false, false, 2);
 		game.start();

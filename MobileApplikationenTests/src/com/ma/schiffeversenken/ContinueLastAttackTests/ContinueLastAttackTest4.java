@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import com.ma.schiffeversenken.android.controller.KI;
 import com.ma.schiffeversenken.android.controller.ShipPlacement;
 import com.ma.schiffeversenken.android.model.Field;
+import com.ma.schiffeversenken.android.model.FieldUnit;
 import com.ma.schiffeversenken.android.model.Ship;
 
 public class ContinueLastAttackTest4 extends TestCase {
@@ -19,16 +20,16 @@ public class ContinueLastAttackTest4 extends TestCase {
 	
 	@Override
 	protected void setUp() throws Exception {
-		Ship[] myships = new Ship[]{new Ship("Uboot", SUBMARINE_SIZE),
-				new Ship("Uboot", SUBMARINE_SIZE),
-				new Ship("Uboot", SUBMARINE_SIZE),
-				new Ship("Kreuzer", CRUISER_SIZE),
-				new Ship("Kreuzer", CRUISER_SIZE),
-				new Ship("Kreuzer", CRUISER_SIZE),
-				new Ship("Kreuzer", CRUISER_SIZE),
-				new Ship("Zerstoerer", DESTROYER_SIZE),
-				new Ship("Zerstoerer", DESTROYER_SIZE),
-				new Ship("Schlachtschiff", BATTLESHIP_SIZE)
+		Ship[] myships = new Ship[]{new Ship(SUBMARINE_SIZE),
+				new Ship(SUBMARINE_SIZE),
+				new Ship(SUBMARINE_SIZE),
+				new Ship(CRUISER_SIZE),
+				new Ship(CRUISER_SIZE),
+				new Ship(CRUISER_SIZE),
+				new Ship(CRUISER_SIZE),
+				new Ship(DESTROYER_SIZE),
+				new Ship(DESTROYER_SIZE),
+				new Ship(BATTLESHIP_SIZE)
 				};
 		
 		Field firstField = new Field(0);
@@ -38,15 +39,20 @@ public class ContinueLastAttackTest4 extends TestCase {
 		firstField.getElementByID(65).setAttacked(true);
 		firstField.getElementByID(55).setAttacked(true);
 		
+		ShipPlacement.jUnitTest = true;
 		ShipPlacement sp = new ShipPlacement();
-		sp.placeShips(firstField, myships, true);
+		sp.placeShips(firstField, myships);
 		
-		KI.jUnitTest = true;
 		ki = new KI(secondField, firstField, false, 2);
 		
-		ki.updateHistory(75, true, false);
-		ki.updateHistory(65, true, false);
-		ki.updateHistory(55, false, false);
+		FieldUnit[] fieldUnits = new FieldUnit[3];
+		fieldUnits[0] = firstField.getElementByID(75);
+		fieldUnits[1] = firstField.getElementByID(65);
+		fieldUnits[2] = firstField.getElementByID(55);
+		
+		ki.updateHistory(75, true, false, fieldUnits);
+		ki.updateHistory(65, true, false, fieldUnits);
+		ki.updateHistory(55, false, false, fieldUnits);
 	}
 	
 	protected void setUpBeforeClass() throws Exception {
