@@ -100,6 +100,9 @@ public class CheckGamePlayTest1 extends TestCase {
 	}
 
 	public void test() throws Exception {
+		assertEquals(false, game.getFirstFieldPlayer().getElementByID(2).getPlacedShip().isDestroyed());
 		assertEquals(false, game.getFirstFieldPlayer().getElementByID(25).getPlacedShip().isDestroyed());
+		assertEquals(false, game.getFirstFieldPlayer().getElementByID(12).getPlacedShip().isDestroyed());
+		assertEquals(false, game.getFirstFieldPlayer().getElementByID(82).getPlacedShip().isDestroyed());
 	}
 }
